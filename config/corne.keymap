@@ -91,11 +91,11 @@ bindings = <&kp TAB>;
         };
 
         game_layer {
-            // Gaming mode: WASD are plain keys (homerow mods off).
+            // Gaming mode: WASD live on E S D F; TAB lands on W, CTRL on the old A corner.
             // Toggle: hold SPACE + J. Everything else falls through to the layers below.
             bindings = <
-&trans  &trans  &kp W       &trans  &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
-&trans  &kp A       &kp S       &kp D      &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
+&trans  &trans  &kp TAB     &kp W     &trans  &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
+&trans  &kp CTRL  &kp A     &kp S     &kp D      &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
 &trans  &trans  &trans  &trans  &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
 &trans  &trans  &trans  &trans  &trans     &trans
             >;
