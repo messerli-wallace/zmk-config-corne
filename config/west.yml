@@ -9,7 +9,10 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      # Pinned to v0.3.0: ZMK main (Dec 2025+) renamed nice_nano_v2 to nice_nano
+      # and moved to LVGL v9, which breaks the nice_nano_v2 board name and the
+      # nice_view display code used by the smallwave config.
+      revision: v0.3.0
       import: app/west.yml
     # ZMK modules
     # - name: zmk-adaptive-key
