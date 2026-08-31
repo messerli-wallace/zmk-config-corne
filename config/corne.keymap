@@ -91,11 +91,11 @@ bindings = <&kp TAB>;
         };
 
         game_layer {
-            // Gaming mode: WASD live on E S D F; TAB on W, CTRL on the old A corner.
+            // Gaming mode: W on E, TAB on W, A S D plain on the home row, CTRL on the left corner.
             // Enter: hold SPACE + J. Exit: tap J. SPACE is plain here; rest falls through.
             bindings = <
 &trans  &trans  &kp TAB     &kp W     &trans  &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
-&trans  &kp LCTRL  &kp A     &kp S     &kp D      &trans     &trans     &tog 4   &trans    &trans     &trans      &trans      &trans
+&kp LCTRL  &kp A     &kp S     &kp D      &trans     &trans     &trans     &tog 4   &trans    &trans     &trans      &trans      &trans
 &trans  &trans  &trans  &trans  &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
 &trans  &kp SPACE  &trans  &trans  &trans     &trans
             >;
