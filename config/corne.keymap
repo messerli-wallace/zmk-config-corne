@@ -95,7 +95,7 @@ bindings = <&kp TAB>;
             // Toggle: hold SPACE + J. Everything else falls through to the layers below.
             bindings = <
 &trans  &trans  &kp TAB     &kp W     &trans  &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
-&trans  &kp CTRL  &kp A     &kp S     &kp D      &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
+&trans  &kp LCTRL  &kp A     &kp S     &kp D      &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
 &trans  &trans  &trans  &trans  &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
 &trans  &trans  &trans  &trans  &trans     &trans
             >;
