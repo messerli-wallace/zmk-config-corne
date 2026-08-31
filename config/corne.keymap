@@ -91,13 +91,13 @@ bindings = <&kp TAB>;
         };
 
         game_layer {
-            // Gaming mode: WASD live on E S D F; TAB lands on W, CTRL on the old A corner.
-            // Toggle: hold SPACE + J. Everything else falls through to the layers below.
+            // Gaming mode: WASD live on E S D F; TAB on W, CTRL on the old A corner.
+            // Enter: hold SPACE + J. Exit: tap J. SPACE is plain here; rest falls through.
             bindings = <
 &trans  &trans  &kp TAB     &kp W     &trans  &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
-&trans  &kp LCTRL  &kp A     &kp S     &kp D      &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
+&trans  &kp LCTRL  &kp A     &kp S     &kp D      &trans     &trans     &tog 4   &trans    &trans     &trans      &trans      &trans
 &trans  &trans  &trans  &trans  &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
-&trans  &trans  &trans  &trans  &trans     &trans
+&trans  &kp SPACE  &trans  &trans  &trans     &trans
             >;
         };
     };
