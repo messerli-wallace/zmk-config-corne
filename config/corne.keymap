@@ -84,20 +84,25 @@ bindings = <&kp TAB>;
         layer_3 {
             bindings = <
 &trans  &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp N0        &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &trans
-&trans  &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &caps_word    &trans  &tog 4         &trans        &trans        &bt BT_CLR_ALL     &trans // gaming mode toggle: hold SPACE + J
+&trans  &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &caps_word    &trans  &trans        &trans        &trans        &bt BT_CLR_ALL     &trans
 &trans  &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans        &trans  &trans        &trans        &trans        &ext_power EP_TOG  &trans
-                              &trans        &trans        &trans        &trans  &trans        &trans
+                              &trans        &trans        &tog 4        &trans  &trans        &trans  // gaming mode: hold SPACE + TAB to enter; tap TAB to exit
             >;
         };
 
         game_layer {
-            // Gaming mode: W on E, TAB on W, A S D plain on the home row, CTRL on the left corner.
-            // Enter: hold SPACE + J. Exit: tap J. SPACE is plain here; rest falls through.
+            // Gaming mode: W on E, TAB on W, A S D plain on the home row, LCTRL on the A corner.
+            // Enter: hold SPACE + TAB (left half). Exit: tap TAB. SPACE is plain here; rest falls through.
+            // |  -  | TAB |  W  |     |     |     |   |     |     |     |     |     |      |
+            // |CTRL |  A  |  S  |  D  |     |     |   |     |     |     |     |     |      |
+            // |     |     |     |     |     |     |   |     |     |     |     |     |      |
+            //                    |     | SPC | TGL |   |     |     |     |
+
             bindings = <
-&trans  &trans  &kp TAB     &kp W     &trans  &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
-&kp LCTRL  &kp A     &kp S     &kp D      &trans     &trans     &trans     &tog 4   &trans    &trans     &trans      &trans      &trans
+&trans  &kp TAB     &kp W     &trans  &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
+&kp LCTRL  &kp A     &kp S     &kp D      &trans     &trans     &trans     &trans     &trans    &trans     &trans      &trans
 &trans  &trans  &trans  &trans  &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
-&trans  &kp SPACE  &trans  &trans  &trans     &trans
+                                &trans      &kp SPACE     &tog 4      &trans     &trans          &trans
             >;
         };
     };
