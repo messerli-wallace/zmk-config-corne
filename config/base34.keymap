@@ -11,8 +11,9 @@
     combos {
         compatible = "zmk,combos";
         combo_game {
-            timeout-ms = <150>;
-            key-positions = <7 33>;
+            // Both thumbs (SPACE + BACKSPACE): squeeze together to toggle gaming mode.
+            timeout-ms = <125>;
+            key-positions = <30 33>;
             bindings = <&tog 4>;
             layers = <0 4>;
         };
@@ -92,11 +93,12 @@
         };
 
         game_layer {
-            // Gaming mode: W on E, TAB on W, A S D plain on the home row, LCTRL on the A corner.
-            // Enter/Exit: press BACKSPACE + I together (combo). Old: hold SPACE + TAB to enter; tap TAB to exit.
+            // Gaming mode: Q TAB W E R on top row (no outer key for TAB on 34-key),
+            // A S D plain on the home row, LCTRL on the corner.
+            // Enter/Exit: squeeze both thumbs (SPACE + BACKSPACE) together.
             bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-      &trans           &kp TAB      &kp W         &trans        &trans        &trans        &trans        &trans        &trans        &trans
+      &kp Q              &kp TAB      &kp W         &kp E           &kp R           &trans        &trans        &trans        &trans        &trans
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &kp LCTRL      &kp A         &kp S         &kp D         &trans        &trans        &trans        &trans        &trans        &trans
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
