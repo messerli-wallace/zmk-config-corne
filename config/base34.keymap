@@ -6,6 +6,19 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 
+/* Combos */
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_game {
+            timeout-ms = <150>;
+            key-positions = <7 33>;
+            bindings = <&tog 4>;
+            layers = <0 4>;
+        };
+    };
+};
+
 /* Keymap */
 / {
     behaviors {
@@ -80,7 +93,7 @@
 
         game_layer {
             // Gaming mode: W on E, TAB on W, A S D plain on the home row, LCTRL on the A corner.
-            // Enter: hold SPACE + TAB (left half). Exit: tap TAB. SPACE is plain here; rest falls through.
+            // Enter/Exit: press BACKSPACE + I together (combo). Old: hold SPACE + TAB to enter; tap TAB to exit.
             bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
       &trans           &kp TAB      &kp W         &trans        &trans        &trans        &trans        &trans        &trans        &trans

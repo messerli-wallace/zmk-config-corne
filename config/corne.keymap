@@ -18,6 +18,12 @@ timeout-ms = <50>;
 key-positions = <15 20>;
 bindings = <&kp TAB>;
     };
+    combo_game {
+        timeout-ms = <150>;
+        key-positions = <8 40>;
+        bindings = <&tog 4>;
+        layers = <0 4>;
+    };
   };
 };
 
@@ -92,7 +98,8 @@ bindings = <&kp TAB>;
 
         game_layer {
             // Gaming mode: W on E, TAB on W, A S D plain on the home row, LCTRL on the A corner.
-            // Enter: hold SPACE + TAB (left half). Exit: tap TAB. SPACE is plain here; rest falls through.
+            // Enter/Exit: press BACKSPACE + I together (combo). Old: hold SPACE + TAB to enter; tap TAB to exit.
+            // SPACE is plain here; rest falls through.
             // |  -  | TAB |  W  |     |     |     |   |     |     |     |     |     |      |
             // |CTRL |  A  |  S  |  D  |     |     |   |     |     |     |     |     |      |
             // |     |     |     |     |     |     |   |     |     |     |     |     |      |
