@@ -98,17 +98,18 @@ bindings = <&kp TAB>;
         };
 
         game_layer {
-            // Gaming mode: TAB Q W E R on top row, A S D plain on the home row, LCTRL on the corner.
+            // Gaming mode: like default but shifted for the stagger - outer column empty,
+            // TAB Q W E R on top (W on the E-spot), LCTRL A S D on home row, all plain (no hold-taps).
             // Enter/Exit: squeeze both thumbs (SPACE + BACKSPACE) together. Old: hold SPACE + TAB; tap TAB to exit.
             // SPACE is plain here; rest falls through.
-            // | TAB |  Q  |  W  |  E  |  R  |     |   |     |     |     |     |     |      |
-            // |CTRL |  A  |  S  |  D  |     |     |   |     |     |     |     |     |      |
+            // |     | TAB |  Q  |  W  |  E  |  R  |   |     |     |     |     |     |      |
+            // |     |CTRL |  A  |  S  |  D  |     |   |     |     |     |     |     |      |
             // |     |     |     |     |     |     |   |     |     |     |     |     |      |
             //                    |     | SPC | TGL |   |     |     |     |
 
             bindings = <
-&kp TAB     &kp Q       &kp W     &kp E       &kp R      &trans     &trans   &trans    &trans     &trans      &trans      &trans
-&kp LCTRL  &kp A     &kp S     &kp D      &trans     &trans     &trans     &trans     &trans    &trans     &trans      &trans
+&trans      &kp TAB     &kp Q     &kp W     &kp E       &kp R      &trans   &trans    &trans     &trans      &trans      &trans
+&trans      &kp LCTRL   &kp A     &kp S     &kp D       &trans     &trans   &trans    &trans     &trans      &trans      &trans
 &trans  &trans  &trans  &trans  &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
                                 &trans      &kp SPACE     &tog 4      &trans     &trans          &trans
             >;
