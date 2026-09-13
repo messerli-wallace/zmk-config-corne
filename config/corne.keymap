@@ -19,9 +19,10 @@ key-positions = <15 20>;
 bindings = <&kp TAB>;
     };
     combo_game {
-        // Both thumbs (SPACE + BACKSPACE): squeeze together to toggle gaming mode.
+        // TAB-thumb + BACKSPACE-thumb (one per thumb): squeeze together to toggle gaming mode.
+        // SPACE stays out of it so it's just space.
         timeout-ms = <125>;
-        key-positions = <37 40>;
+        key-positions = <38 40>;
         bindings = <&tog 4>;
         layers = <0 4>;
     };
@@ -98,19 +99,19 @@ bindings = <&kp TAB>;
         };
 
         game_layer {
-            // Gaming mode: like default but shifted for the stagger - outer column holds plain LSHIFT,
-            // TAB Q W E R on top (W on the E-spot), LCTRL A S D on home row, all plain (no hold-taps).
-            // Enter/Exit: squeeze both thumbs (SPACE + BACKSPACE) together. Old: hold SPACE + TAB; tap TAB to exit.
-            // SPACE is plain here; rest falls through.
+            // Gaming mode: like default but shifted for the stagger - outer column empty,
+            // TAB Q W E R on top (W on the E-spot), LCTRL A S D on home row, plain LSHIFT on the Z-spot.
+            // All plain keys (no hold-taps). SPACE is just space.
+            // Enter/Exit: squeeze TAB-thumb + BACKSPACE-thumb together. Old: hold SPACE + TAB; tap TAB to exit.
             // |     | TAB |  Q  |  W  |  E  |  R  |   |     |     |     |     |     |      |
-            // | SFT |CTRL |  A  |  S  |  D  |     |   |     |     |     |     |     |      |
-            // |     |     |     |     |     |     |   |     |     |     |     |     |      |
+            // |     |CTRL |  A  |  S  |  D  |     |   |     |     |     |     |     |      |
+            // |     | SFT |     |     |     |     |   |     |     |     |     |     |      |
             //                    |     | SPC | TGL |   |     |     |     |
 
             bindings = <
 &trans      &kp TAB     &kp Q     &kp W     &kp E       &kp R      &trans   &trans    &trans     &trans      &trans      &trans
-&kp LSHIFT  &kp LCTRL   &kp A     &kp S     &kp D       &trans     &trans   &trans    &trans     &trans      &trans      &trans
-&trans  &trans  &trans  &trans  &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
+&trans      &kp LCTRL   &kp A     &kp S     &kp D       &trans     &trans   &trans    &trans     &trans      &trans      &trans
+&trans  &kp LSHIFT  &trans  &trans  &trans     &trans     &trans   &trans    &trans     &trans      &trans      &trans
                                 &trans      &kp SPACE     &tog 4      &trans     &trans          &trans
             >;
         };

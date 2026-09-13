@@ -11,9 +11,10 @@
     combos {
         compatible = "zmk,combos";
         combo_game {
-            // Both thumbs (SPACE + BACKSPACE): squeeze together to toggle gaming mode.
+            // TAB-thumb + BACKSPACE-thumb (one per thumb): squeeze together to toggle gaming mode.
+            // SPACE stays out of it so it's just space.
             timeout-ms = <125>;
-            key-positions = <30 33>;
+            key-positions = <31 33>;
             bindings = <&tog 4>;
             layers = <0 4>;
         };
@@ -94,15 +95,16 @@
 
         game_layer {
             // Gaming mode: Q TAB W E R on top row (no outer key for TAB on 34-key),
-            // A S D plain on the home row, LCTRL on the corner.
-            // Enter/Exit: squeeze both thumbs (SPACE + BACKSPACE) together.
+            // A S D plain on the home row, LCTRL on the corner, plain LSHIFT on the Z-spot.
+            // All plain keys (no hold-taps). SPACE is just space.
+            // Enter/Exit: squeeze TAB-thumb + BACKSPACE-thumb together.
             bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
       &kp Q              &kp TAB      &kp W         &kp E           &kp R           &trans        &trans        &trans        &trans        &trans
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &kp LCTRL      &kp A         &kp S         &kp D         &trans        &trans        &trans        &trans        &trans        &trans
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-      &trans           &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans
+      &kp LSHIFT       &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans
 // ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ├──────┤
                                                  &kp SPACE      &tog 4       &trans        &trans
 //                                           ╰─────────────┴─────────────╯  ╰─────────────┴─────────────╯                                           ╰──────╯
